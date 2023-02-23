@@ -78,16 +78,29 @@ $ docker compose exec app sh
     ```cmd
     $ docker compose up -d
     ```
-    - 終了
+    - 終了（コンテナ削除）
     ```cmd
     $ docker compose down
+    ```
+    - 停止したコンテナ再開
+    ```cmd
+    $ docker compose start
+    ```
+    - コンテナ停止
+    ```cmd
+    $ docker compose stop
     ```
 
 ### docker endpoint for default not found のエラーが出た場合
 以下のコマンドでmeta情報を削除してから再ビルドしてください
-```sh
-$ rm -rf C:\Users\<ユーザ名>.docker\contexts\meta\XXXXXX
-```
+  - windowsの場合
+    ```sh
+    $ rm -rf C:\Users\<ユーザ名>.docker\contexts\meta\XXXXXX
+    ```
+  - WSL2の場合
+    ```sh
+    $ rm -rf ~/.docker/contents/mata/XXXX
+    ```
 
 ### 参考サイト
 - URL: <https://zenn.dev/szn/articles/nuxt-3-with-docker-compose>
